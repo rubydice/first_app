@@ -17,7 +17,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'libv8', '~> 3.11.8'
+  gem 'therubyracer', '0.11.0'
 
   gem 'uglifier', '>= 1.2.3'
 end
@@ -39,4 +40,9 @@ gem 'jquery-rails', '2.0.2'
 # To use debugger
 # gem 'debugger'
 #
-  gem 'therubyracer', require: "v8"
+
+group :production do
+  gem 'therubyracer', '0.11.0'
+  gem 'libv8', '~> 3.11.8'
+  gem 'pg', '>= 0.14.1'
+end
